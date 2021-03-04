@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>HISTORIQUE</title>
+</head>
+
+{% block content %}
+
+<section style="display: flex; flex-direction: column; margin: 30px;">
+	<h1 style="margin: 20px auto;">{{title}}</h1>
+
+	<section style="width: 300px; margin: 20px auto;">
+		<table>
+			<tr>
+				<th>Date</th>
+				<th>Heure</th>
+				<th>Detail</th>
+			</tr>
+			{% for r in repas%}
+			<tr>
+				
+				<td>
+					{{r.d}}
+				</td>
+				<td>
+					{{r.h}}
+				</td>
+				<td>Detail ↓</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<table>
+						<tr>
+							<td>
+								{{','.join(r.aliments)}}
+							</td>
+						<tr>
+					</table>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+
+	</section>
+
+
+	<section style="display: inline; margin: 20px auto;">
+		<button><a href="repas" style="padding: 10px; margin: 20px auto;  text-decoration: none; color: black;">Ajouter
+				un nouveau repas</a></button>
+		<button>
+			<a href="/" style="padding: 10px; margin: 20px auto; text-decoration: none; color: black;">Retour
+				à l'accueil</a>
+		</button>
+	</section>
+</section>
+{% endblock %}

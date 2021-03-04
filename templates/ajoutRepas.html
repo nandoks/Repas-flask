@@ -1,0 +1,32 @@
+{% block content %}
+	<section style="display: flex; flex-direction: column;  margin:30px;">
+		<h1 style="margin: 50px auto 0 auto;">AJOUT</h1>
+
+		<form action="ajout" method="POST" style="margin: 20px auto; ">
+			<label for="iddate">date </label>
+			<input type="date" id="iddate" name="date" required>
+			<br /><br />
+			<label for="idheure">heure </label>
+			<input type="time" id="idheure" name="heure" required>
+			<br /><br />
+			<label for="idrepas" style="vertical-align: top;">repas </label>
+			<textarea type="text" id="idrepas" name="aliments" size="50" style="height:100px; width:300px;"
+				required></textarea>
+			<br /><br />
+			<input type="submit" name="btnConfirmer" value="Confirmer">
+
+			<button>
+				<a href="/"
+					style="padding: 10px; margin: 20px auto; text-decoration: none; color: black;">Accueil
+				</a></button>
+			<button>
+				<a href="historique"
+					style="padding: 10px; margin: 20px auto; text-decoration: none; color: black;">Historique
+					Repas
+				</a>
+			</button>
+		</form>
+		
+		
+	</section>
+	{% endblock %}
